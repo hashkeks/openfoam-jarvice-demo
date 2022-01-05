@@ -1,5 +1,5 @@
-# Based on Ubuntu 21.04
-FROM ubuntu:21.04
+# Based on Nimbix Ubuntu version
+FROM nimbix/ubuntu-base
 
 # Update, upgrade and prerequisite installation
 RUN apt-get update -y && apt-get upgrade -y
