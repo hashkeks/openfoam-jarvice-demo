@@ -12,13 +12,21 @@ RUN apt-get install -y \
 											curl \
 											software-properties-common ; 
 
+
+
 # Make the Ubuntu Image JARVICE-ready
-RUN curl -H 'Cache-Control: no-cache' \
+RUN DEBIAN_FRONTEND=noninteractive curl -H 'Cache-Control: no-cache' \
 		https://raw.githubusercontent.com/nimbix/image-common/master/install-nimbix.sh \
-    | bash 
+    | bash -s -- --setup-nimbix-desktop
 
 # Expose port 22 for local JARVICE emulation in docker
 EXPOSE 22
+
+# For standalone use
+EXPOSE 5901
+EXPOSE 443
+
+
 
 # Create OpenFoam user
 RUN useradd --user-group --create-home --shell /bin/bash foam ; \
