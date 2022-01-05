@@ -1,0 +1,27 @@
+# Based on Nimbix Ubuntu version
+FROM openfoam/openfoam9-paraview56
+
+# Update, upgrade and prerequisite installation
+RUN apt-get update -y 
+
+RUN apt-get install -y \
+	vim \
+	ssh \
+	sudo \
+	wget \
+	curl \
+	software-properties-common ; 
+
+
+# Make the Ubuntu Image JARVICE-ready
+RUN DEBIAN_FRONTEND=noninteractive curl -H 'Cache-Control: no-cache' \
+	https://raw.githubusercontent.com/nimbix/image-common/master/install-nimbix.sh \
+  | bash -s -- --setup-nimbix-desktop
+
+# Expose port 22 for local JARVICE emulation in docker
+EXPOSE 22
+
+# For standalone use
+EXPOSE 5901
+EXPOSE 443
+
