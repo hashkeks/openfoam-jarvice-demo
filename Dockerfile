@@ -27,4 +27,4 @@ RUN sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -" ; \
 		echo "export OMPI_MCA_btl_vader_single_copy_mechanism=none" >> ~foam/.bashrc
 
 # Set foam to default container user
-USER foam
+# USER foam
