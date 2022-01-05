@@ -1,5 +1,5 @@
 # Based on Nimbix Ubuntu version
-FROM ubuntu:21.04
+FROM ubuntu:18.04
 
 # Update, upgrade and prerequisite installation
 RUN apt-get update -y 
@@ -11,14 +11,6 @@ RUN apt-get install -y \
 											wget \
 											curl \
 											software-properties-common ; \
-
-# Make the Ubuntu Image JARVICE-ready
-RUN curl -H 'Cache-Control: no-cache' \
-		https://raw.githubusercontent.com/nimbix/image-common/master/install-nimbix.sh \
-    | bash
-
-# Expose port 22 for local JARVICE emulation in docker
-EXPOSE 22
 
 # Create OpenFoam user
 RUN useradd --user-group --create-home --shell /bin/bash foam ; \
@@ -34,3 +26,11 @@ RUN sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -" ; \
 
 # Set foam to default container user
 # USER foam
+
+# Make the Ubuntu Image JARVICE-ready
+RUN curl -H 'Cache-Control: no-cache' \
+		https://raw.githubusercontent.com/nimbix/image-common/master/install-nimbix.sh \
+    | bash 
+
+# Expose port 22 for local JARVICE emulation in docker
+EXPOSE 22
