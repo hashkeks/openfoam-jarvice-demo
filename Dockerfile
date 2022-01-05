@@ -36,13 +36,9 @@ RUN sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -" ; \
 	apt-get update -y ; \
 	apt-get install -y openfoam9 
 
-RUN	echo "source /opt/openfoam9/etc/bashrc" >> /home/nimbix/.bashrc
-RUN	echo "export OMPI_MCA_btl_vader_single_copy_mechanism=none" >> /home/nimbix/.bashrc
-RUN echo "source /opt/openfoam9/etc/bashrc" >> /home/nimbix/.profile
-RUN touch /testfile
-RUN cd /home/nimbix && touch testfile
-RUN echo "source /opt/openfoam9/etc/bashrc" >> /home/nimbix/hallo
-
+#RUN	echo "source /opt/openfoam9/etc/bashrc" >> /home/nimbix/.bashrc
+#RUN	echo "export OMPI_MCA_btl_vader_single_copy_mechanism=none" >> /home/nimbix/.bashrc
+RUN cat <<EOF 
 # Set foam to default container user
 # USER foam
 
