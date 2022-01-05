@@ -35,8 +35,8 @@ RUN sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -" ; \
 		add-apt-repository http://dl.openfoam.org/ubuntu ; \
 		apt-get update -y ; \
 		apt-get install -y openfoam9 ; \
-		echo "source /opt/openfoam9/etc/bashrc" >> ~nimbix/.bashrc ; \
-		echo "export OMPI_MCA_btl_vader_single_copy_mechanism=none" >> ~nimbix/.bashrc
+		echo "source /opt/openfoam9/etc/bashrc" >> /home/nimbix/.bashrc ; \
+		echo "export OMPI_MCA_btl_vader_single_copy_mechanism=none" >> /home/nimbix/.bashrc
 
 # Set foam to default container user
 # USER foam
