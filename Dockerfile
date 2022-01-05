@@ -22,3 +22,9 @@ RUN sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -" ; \
 		apt-get update -y ; \
 		apt-get upgrade -y ; \
 		apt-get install -y openfoam9 ; \
+		rm -rf /var/lib/apt/lists/* ; \
+		echo "source /opt/openfoam9/etc/bashrc" >> ~foam/.bashrc ; \
+		echo "export OMPI_MCA_btl_vader_single_copy_mechanism=none" >> ~foam/.bashrc
+
+# Set foam to default container user
+USER foam
