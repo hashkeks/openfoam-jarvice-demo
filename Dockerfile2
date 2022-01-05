@@ -2,15 +2,15 @@
 FROM openfoam/openfoam9-paraview56
 
 # Update, upgrade and prerequisite installation
-RUN apt-get update -y 
-
-RUN apt-get install -y \
-	vim \
-	ssh \
-	sudo \
-	wget \
-	curl \
-	software-properties-common ; 
+#RUN apt-get update -y 
+#
+#RUN apt-get install -y \
+#	vim \
+#	ssh \
+#	sudo \
+#	wget \
+#	curl \
+#	software-properties-common ; 
 
 
 # Make the Ubuntu Image JARVICE-ready
