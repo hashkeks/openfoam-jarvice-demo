@@ -18,9 +18,9 @@ RUN sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -" ; \
 	apt-get update -y && apt-get install -y openfoam9 \
 	&& rm -rf /var/lib/apt/lists/*
 
-RUN cat << 'EOF' | /etc/init.d/prepare_openfoam.sh > /dev/null
+RUN cat << 'EOF' | /etc/init.d/prepare_openfoam.sh > /dev/null \
 	echo "source /opt/openfoam9/etc/bashrc" >> /home/nimbix/.bashrc \
-	&& echo "export OMPI_MCA_btl_vader_single_copy_mechanism=none" >> /home/nimbix/.bashrc
+	&& echo "export OMPI_MCA_btl_vader_single_copy_mechanism=none" >> /home/nimbix/.bashrc \
 EOF && chmod +x /etc/init.d/prepare_openfoam.sh
 
 #RUN cat >> prepare_bashrc.sh << EOF \
