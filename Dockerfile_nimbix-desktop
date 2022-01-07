@@ -5,6 +5,7 @@ FROM nimbix/ubuntu-desktop
 RUN apt-get update && apt-get install -y \
 	vim \
 	ssh \
+	sudo \
 	software-properties-common \
 	&& rm -rf /var/lib/apt/lists/*
 
@@ -18,8 +19,8 @@ RUN sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -" ; \
 	apt-get update -y && apt-get install -y openfoam9 \
 	&& rm -rf /var/lib/apt/lists/*
 
-RUN touch /etc/init.d/prepare_openfoam.sh \ 
-	&& cat << 'EOF' | /etc/init.d/prepare_openfoam.sh > /dev/null \
+RUN sudo touch /etc/init.d/prepare_openfoam.sh \ 
+	&& cat << 'EOF' | sudo tee /etc/init.d/prepare_openfoam.sh > /dev/null \
 	echo "source /opt/openfoam9/etc/bashrc" >> /home/nimbix/.bashrc \
 	&& echo "export OMPI_MCA_btl_vader_single_copy_mechanism=none" >> /home/nimbix/.bashrc \
 EOF && chmod +x /etc/init.d/prepare_openfoam.sh
