@@ -1,0 +1,2 @@
+source /opt/openfoam9/etc/bashrc
+export OMPI_MCA_btl_vader_single_copy_mechanism=none
