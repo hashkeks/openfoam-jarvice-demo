@@ -20,8 +20,8 @@ RUN sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -" ; \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN <<EOF 
-	sudo touch /etc/init.d/prepare_openfoam.sh
-	sudo echo "echo -e \"source /opt/openfoam9/etc/bashrc\nexport OMPI_MCA_btl_vader_single_copy_mechanism=none\" >> /home/nimbix/.bashrc" >> /etc/init.d/prepare_openfoam.sh
+	touch /etc/init.d/prepare_openfoam.sh
+	echo "echo -e \"source /opt/openfoam9/etc/bashrc\nexport OMPI_MCA_btl_vader_single_copy_mechanism=none\" >> /home/nimbix/.bashrc" >> /etc/init.d/prepare_openfoam.sh
 	chmod +x /etc/init.d/prepare_openfoam.sh
 EOF
 #RUN cat >> prepare_bashrc.sh << EOF \
