@@ -20,6 +20,13 @@ RUN sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -" ; \
 	apt-get update -y && apt-get install -y openfoam8 \
 	&& rm -rf /var/lib/apt/lists/*
 
+##appdef config
+COPY scripts /usr/local/scripts
+COPY NAE/AppDef.json /etc/NAE/AppDef.json
+RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://api.jarvice.com/jarvice/validate
+COPY NAE/gzuz135135.png /etc/NAE/gzuz135135.png
+
+
 # Modify .bashrc to include OpenFoam binaries.
 # Ran as cronjob at startup.
 RUN touch /etc/init.d/prepare_openfoam.sh && \
