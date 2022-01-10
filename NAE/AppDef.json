@@ -14,7 +14,7 @@
 	],
 	"commands": {
 		"Batch": {
-			"path": "/usr/local/scripts/start-openfoam-viz.sh",
+			"path": "/usr/local/scripts/openfoam-batch.sh",
 			"interactive": true,
 			"name": "OpemFoam Batch",
 			"description": "Run OpenFoam Batch",
