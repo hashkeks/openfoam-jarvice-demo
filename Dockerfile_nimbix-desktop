@@ -22,7 +22,7 @@ RUN sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -" ; \
 # Modify .bashrc to include OpenFoam binaries.
 # Ran as cronjob at startup.
 RUN touch /etc/init.d/prepare_openfoam.sh && \
-	echo "echo -e \"source /opt/openfoam9/etc/bashrc\nexport OMPI_MCA_btl_vader_single_copy_mechanism=none\" >> /home/nimbix/.bashrc" >> /etc/init.d/prepare_openfoam.sh && \
+	echo "echo -e \"source /opt/openfoam8/etc/bashrc\nexport OMPI_MCA_btl_vader_single_copy_mechanism=none\" >> /home/nimbix/.bashrc" >> /etc/init.d/prepare_openfoam.sh && \
 	chmod +x /etc/init.d/prepare_openfoam.sh && \
 	echo "@reboot nimbix /bin/bash /etc/init.d/prepare_openfoam.sh" >> /etc/cron.d/prepare_openfoam
 
