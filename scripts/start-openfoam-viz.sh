@@ -55,7 +55,7 @@ for i in $(cat /etc/JARVICE/nodes); do
 done
 
 # create the working dir, the "run" dir where files go, matches to FOAM_RUN in env
-mkdir -p /data/openfoam7/run
+mkdir -p /data/openfoam8/run
 
 # Add a desktop shortcut for the paraFoam viewer
 mkdir -p $HOME/Desktop
