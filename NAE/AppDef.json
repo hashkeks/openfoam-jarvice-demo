@@ -4,7 +4,7 @@
 	"author": "Casper, Kevin",
 	"licensed": false,
 	"classifications": [
-		"Stroemunssimulation"
+		"Stroemungssimulation"
 	],
 	"machines": [
 		"*"
@@ -25,12 +25,12 @@
 					"name": "OpenFoam case, select any file"
 				},
 				"-mesh": {
-         			"type": "BOOL",
-       		 		"required": true,
-         		 	"value": true,
-         		 	"name": "Run mesh generation?",
-         		 	"description": "Select here to run the selected mesh generation utility on the Case"
-       			},
+        	"type": "BOOL",
+       		"required": true,
+         	"value": true,
+         	"name": "Run mesh generation?",
+         	"description": "Select here to run the selected mesh generation utility on the Case"
+       	},
 				"-meshtype": {
 					"vaules": [
 						"blockMesh",
