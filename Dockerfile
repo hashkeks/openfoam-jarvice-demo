@@ -41,7 +41,8 @@ RUN sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -" ; \
 COPY scripts /usr/local/scripts
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
 COPY NAE/gzuz135135.png /etc/NAE/screenshot.png
-RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://api.jarvice.com/jarvice/validate
+# Check if AppDef.json is valid (fails: server not reachable)
+#RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://api.jarvice.com/jarvice/validate
 
 
 # Modify .bashrc to include OpenFoam binaries.
