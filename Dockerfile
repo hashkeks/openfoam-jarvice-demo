@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y \
 	sudo \
 	ffmpeg \
 	curl \
+	wget \
 	software-properties-common
 
 
