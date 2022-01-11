@@ -46,9 +46,9 @@
 						"fireFoam",
 						"financialFoam"
 					],
-				"required": true,
-				"type": "selection",
-				"name": "Solver"
+					"required": true,
+					"type": "selection",
+					"name": "Solver"
 				}
 			}
 		}
