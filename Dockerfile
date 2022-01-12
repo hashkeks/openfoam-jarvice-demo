@@ -39,7 +39,7 @@ RUN sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -" ; \
 
 ##appdef config
 COPY scripts /usr/local/scripts
-RUN chown nimbix:nimbix -R /usr/local/scripts
+#RUN chown nimbix:nimbix -R /usr/local/scripts
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
 COPY NAE/gzuz135135.png /etc/NAE/screenshot.png
 
