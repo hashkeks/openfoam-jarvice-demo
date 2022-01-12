@@ -57,7 +57,22 @@
           ],
           "required": true,
           "type": "selection",
-          "name": "Mesh generator"
+          "name": "First mesh generator"
+        },
+        "-meshtype2": {
+          "values": [
+            " ",
+            "blockMesh",
+            "extrude2DMesh",
+            "extrudeMesh",
+            "extrudeToRegionMesh",
+            "foamyHexMesh",
+            "foamyQuadMesh",
+            "snappyHexMesh"
+          ],
+          "required": true,
+          "type": "selection",
+          "name": "Second mesh generator"
         },
         "-solver": {
           "values": [
