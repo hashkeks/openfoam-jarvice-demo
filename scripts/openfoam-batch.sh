@@ -83,7 +83,7 @@ $MESHTYPE | tee -a "$CASE"/case.log
 
 # run second selected mesh if given and log
 echo "Checking if second meshtype was set"
-if [[ "$MESHTYPE_TWO" != " " ]]; then
+if [ $MESHTYPE_TWO != " " ]; then
   echo "Running second selected mesh and logging to $CASE/case.log"
 	$MESHTYPE_TWO | tee -a "$CASE"/case.log
 fi
