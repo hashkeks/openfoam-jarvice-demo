@@ -75,11 +75,11 @@
           "name": "Second mesh generator"
         },
         "-overwrite": {
-					"type": "BOOL",
-					"required": "true",
-					"value": "true",
-					"name": "Use -overwrite flag?",
-					"description": "Use -overwrite flag on second mesh generation?"
+          "type": "BOOL",
+          "required": true,
+          "value": true,
+          "name": "Use -overwrite flag?",
+          "description": "Use -overwrite flag on second mesh generation?"
         },
         "-solver": {
           "values": [
