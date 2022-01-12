@@ -85,7 +85,7 @@ $MESHTYPE | tee -a "$CASE"/case.log
 echo "Checking if second meshtype was set"
 if [ $MESHTYPE_TWO != " " ]; then
   echo "Running second selected mesh and logging to $CASE/case.log"
-	$MESHTYPE_TWO | tee -a "$CASE"/case.log
+	$MESHTYPE_TWO -overwrite | tee -a "$CASE"/case.log
 fi
 
 # set initial fields
