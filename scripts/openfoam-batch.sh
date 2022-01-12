@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 # Source the JARVICE job environment variables
 [[ -r /etc/JARVICE/jobenv.sh ]] && source /etc/JARVICE/jobenv.sh
