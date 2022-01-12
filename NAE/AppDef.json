@@ -1,6 +1,6 @@
 {
   "name": "OpenFOAM8 - PraktiVersion",
-  "description": "OpenFoam8 with Nimbix Desktop",
+  "description": "OpenFOAM8 with Nimbix Desktop, based on Nimbix OpenFOAM 7",
   "author": "Casper, Kaftan",
   "licensed": false,
   "classifications": [
@@ -20,7 +20,7 @@
       "path": "/usr/local/scripts/start-openfoam-viz.sh",
       "interactive": true,
       "name": "OpenFOAM GUI",
-      "description": "Hiiii, das ist eine Applikation hihihiihi",
+      "description": "Graphical version with Nimbix Desktop",
       "machines": [
         "n[0-9]*",
         "nc[1-9][0-9]*"
