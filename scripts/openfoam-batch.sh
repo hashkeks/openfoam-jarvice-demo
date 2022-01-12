@@ -89,9 +89,9 @@ $MESHTYPE | tee -a "$CASE"/case.log
 echo "Checking if second meshtype was set"
 
 if [ $OVERWRITE == "true" ]; then
-	$OVERWRITE="-overwrite"
+	OVERWRITE="-overwrite"
 else
-	unset $OVERWRITE
+	unset OVERWRITE
 fi
 
 if [ $MESHTYPE_TWO != " " ]; then
