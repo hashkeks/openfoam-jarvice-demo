@@ -39,6 +39,7 @@ RUN sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -" ; \
 
 ##appdef config
 COPY scripts /usr/local/scripts
+RUN chown nimbix:nimbix -R /usr/local/scripts
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
 COPY NAE/gzuz135135.png /etc/NAE/screenshot.png
 
@@ -53,5 +54,3 @@ RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://ck-jarvice.us-west-2.ek
 #	chmod +x /etc/init.d/prepare_openfoam.sh && \
 #	echo "@reboot nimbix /bin/bash /etc/init.d/prepare_openfoam.sh" >> /etc/cron.d/prepare_openfoam
 
-# Set foam to default container user
-USER nimbix
