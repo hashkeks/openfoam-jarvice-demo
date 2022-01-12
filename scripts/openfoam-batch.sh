@@ -44,10 +44,9 @@ while [[ -n "$1" ]]; do
     shift
     MESHTYPE_TWO="$1"
     ;;
-	-overwrite)
-		shift
-		OVERWRITE="true"
-		;;
+  -overwrite)
+    OVERWRITE="true"
+    ;;
   -solver)
     shift
     SOLVER="$1"
