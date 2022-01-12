@@ -24,6 +24,7 @@ set -e
 CASE="/data/openfoam8/run"
 MESHTYPE="blockMesh"
 MESHTYPE_TWO=" "
+OVERWRITE="true"
 SOLVER="laplacianFoam"
 
 while [[ -n "$1" ]]; do
@@ -43,6 +44,10 @@ while [[ -n "$1" ]]; do
     shift
     MESHTYPE_TWO="$1"
     ;;
+	-overwrite)
+		shift
+		OVERWRITE="true"
+		;;
   -solver)
     shift
     SOLVER="$1"
@@ -83,9 +88,16 @@ $MESHTYPE | tee -a "$CASE"/case.log
 
 # run second selected mesh if given and log
 echo "Checking if second meshtype was set"
+
+if [ $OVERWRITE == "true" ]; then
+	$OVERWRITE="-overwrite"
+else
+	unset $OVERWRITE
+fi
+
 if [ $MESHTYPE_TWO != " " ]; then
   echo "Running second selected mesh and logging to $CASE/case.log"
-	$MESHTYPE_TWO -overwrite | tee -a "$CASE"/case.log
+	$MESHTYPE_TWO $OVERWRITE | tee -a "$CASE"/case.log
 fi
 
 # set initial fields
