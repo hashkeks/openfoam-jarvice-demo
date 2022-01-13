@@ -1,6 +1,6 @@
 {
   "name": "OpenFOAM8 - PraktiVersion",
-  "description": "OpenFOAM8 with Nimbix Desktop, based on Nimbix OpenFOAM 7",
+  "description": "OpenFOAM8 with Nimbix Desktop, based on Nimbix OpenFOAM 8 with Paraview",
   "author": "Casper, Kaftan",
   "licensed": false,
   "classifications": [
