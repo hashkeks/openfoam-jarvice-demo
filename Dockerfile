@@ -19,7 +19,6 @@ RUN apt-get update && apt-get install -y \
 	ssh \
 	sudo \
 	ffmpeg \
-	curl \
 	wget \
 	software-properties-common
 
