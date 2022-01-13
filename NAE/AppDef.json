@@ -31,7 +31,7 @@
       "path": "/usr/local/scripts/openfoam-batch.sh",
       "interactive": true,
       "name": "OpenFOAM Batch",
-      "description": "Run OpenFOAM8; for a case thru decompose, mesh and solve stages with MPI, Case should be run from /data/openfoam8/run ($FOAM_RUN)",
+      "description": "Run OpenFOAM8; for a case thru decompose, mesh and solve stages with MPI. Put Case data into /data/openfoam8/run and select .case file from there",
       "parameters": {
         "-case": {
           "required": true,
@@ -73,6 +73,13 @@
           "required": true,
           "type": "selection",
           "name": "Second mesh generator"
+        },
+        "-overwrite": {
+          "type": "BOOL",
+          "required": true,
+          "value": true,
+          "name": "Use -overwrite flag?",
+          "description": "Use -overwrite flag on second mesh generation?"
         },
         "-solver": {
           "values": [
