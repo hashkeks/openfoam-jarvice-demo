@@ -44,7 +44,7 @@ COPY NAE/AppDef.json /etc/NAE/AppDef.json
 COPY NAE/alan-turing-help.jpg /etc/NAE/screenshot.png
 
 # Check if AppDef.json is valid (fails: server not reachable)
-RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://ck-jarvice.us-west-2.eks.jarvice.35.80.137.172.nip.io/api/jarvice/validate
+#RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://jarvice.hello/api/jarvice/validate
 
 
 # Modify .bashrc to include OpenFoam binaries.
