@@ -41,7 +41,7 @@ RUN sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -" ; \
 COPY scripts /usr/local/scripts
 #RUN chown nimbix:nimbix -R /usr/local/scripts
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
-COPY NAE/alan-turing-help.jpg /etc/NAE/screenshot.png
+COPY NAE/us.jpg /etc/NAE/screenshot.png
 
 # Check if AppDef.json is valid (fails: server not reachable)
 #RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://jarvice.hello/api/jarvice/validate
